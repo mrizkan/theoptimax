@@ -140,7 +140,7 @@
 <!-- /Right-bar -->
 
 <footer class="footer text-right">
-    <?php echo date("Y"); ?> &copy; <?= TITLE ?> | Developed By IT Mart Lanka (Pvt) Ltd. +94 777 732 100
+    <?php echo date("Y"); ?> &copy; <?= TITLE ?> | Developed By <a href="http://rizcreation.com/" target="_blank"> Riz Creations</a> +94 777 943 607
 </footer>
 
 

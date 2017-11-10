@@ -40,7 +40,7 @@
                                 <div class="form-group">
                                     <div class="row">
 
-                                        <div class="col-lg-6" style="display: ;">
+                                        <div class="col-lg-6" style="display:none ;">
 
 
                                             <div class="form-group">
@@ -91,10 +91,10 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6" style="display: none">
+                                        <div class="col-lg-6" style="">
                                             <div class="form-group">
                                                 <label> Default Image
-                                                    <small> image size ( 800px * 800px )</small>
+                                                    <small> image size ( 32px * 32px )</small>
                                                 </label>
                                             </div>
                                             <div class="fileinput-button btn btn-success sepH_b">

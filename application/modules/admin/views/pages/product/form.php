@@ -44,15 +44,14 @@
 
 
                                             <div class="form-group">
-                                                <label for="name">Brand Name</label>
+                                                <label for="name">Select Menu</label>
 
 
                                                 <select class="form-control" name="form[BrandId]">.
-                                                    <option value=""> Select Brand </option>
-                                                    <?php foreach ($brands as $brand): ?>
-                                                        <option
-                                                            value="<?= $brand->BrandId ?>" <?= set_value('form[BrandId]', $obj->BrandId) == $brand->BrandId ? "selected" : "" ?> > <?= $brand->BrandTitle ?> </option>
-                                                    <?php endforeach; ?>
+                                                    <option value=""> Select Menu</option>
+                                                    <option value=""> Opticals </option>
+                                                    <option value=""> Diabetic Foot Care </option>
+
                                                 </select>
 
                                                 <?= form_error('form[BrandId]') ?>
@@ -89,7 +88,7 @@
 
 
 
-                                        <div class="col-lg-9" >
+                                        <div class="col-lg-8" >
                                             <div class="form-group">
                                                 <label for="name">Product Title </label>
                                                 <input type="text" id="ModelNumber" name="form[ProductTitle]"
@@ -159,7 +158,7 @@
                                         </div>
 
 
-                                        <div class="col-lg-6" >
+                                        <div class="col-lg-6" style="display: none" >
                                             <div class="form-group">
                                                 <div class="form-group">
                                                     <label for="description">Short Description</label>
@@ -169,10 +168,10 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label> Default Image
-                                                    <small> image size ( 800px * 800px )</small>
+                                                    <small> image size ( 605px * 442px )</small>
                                                 </label>
                                             </div>
                                             <div class="fileinput-button btn btn-success sepH_b">
@@ -206,7 +205,7 @@
                                             <?= form_error('form[Image]') ?>
                                         </div>
 
-                                        <div class="col-lg-6" >
+                                        <div class="col-lg-6" style="display: none;" >
                                             <div class="form-group">
                                                 <label for="description">Video Embed Code </label>
                                                 <textarea rows="5" name="form[VideoEmbedCode]"
@@ -276,7 +275,7 @@
                     <div>
                         <div class="card-box" >
                             <h4 class="header-title m-t-0 m-b-30">More Images
-                                <small> image size ( 800px * 800px )</small>
+                                <small> image size ( 605px * 442px )</small>
                             </h4>
 
                             <div class="row ">

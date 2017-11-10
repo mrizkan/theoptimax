@@ -41,15 +41,15 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="name">Slider Name </label>
+                                                <label for="name">Main Text </label>
                                                 <input type="text" id="SliderTitle" name="form[SliderTitle]"
                                                        value="<?= set_value('form[SliderTitle]', $obj->SliderTitle) ?>"
                                                        class="form-control">
                                                 <?= form_error('form[SliderTitle]') ?>
                                             </div>
 
-                                            <div class="form-group" style="display:none;">
-                                                <label for="description">Short Description</label>
+                                            <div class="form-group" style="">
+                                                <label for="description">Secondary Text</label>
                                                 <textarea rows="5" name="form[ShortDescription]"
                                                           class="form-control"><?= set_value('form[ShortDescription]', $obj->ShortDescription) ?></textarea>
                                             </div>
@@ -63,7 +63,7 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label> Slider Default Image
-                                                    <small> image size ( 870px * 420px )</small>
+                                                    <small> image size ( 1920px * 880px )</small>
                                                 </label>
                                             </div>
                                             <div class="fileinput-button btn btn-success sepH_b">

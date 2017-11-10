@@ -31,7 +31,7 @@ class Subcategory extends MY_Controller
     {
 
 
-        $this->form_validation->set_rules("form[CategoryId]", "Category", "required");
+//        $this->form_validation->set_rules("form[CategoryId]", "Category", "required");
         $this->form_validation->set_rules("form[SubCategoryTitle]", "Sub Category Title", "required");
 //        $this->form_validation->set_rules("form[BrandId]", "Brand Name", "required");
 //        $this->form_validation->set_rules("form[ProductTitle]","Product Name","required");

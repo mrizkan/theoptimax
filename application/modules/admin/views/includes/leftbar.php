@@ -11,7 +11,7 @@
                         <i class="zmdi zmdi-view-dashboard"></i><span> Dashboard </span> </a>
                 </li>
 
-                <li class="has_sub">
+                <li class="has_sub" style="display:none;">
                     <a href="javascript:void(0);" class="waves-effect">
                         <i class="ion-gear-a"></i>
                         <span>Pre-Setting </span>
@@ -141,7 +141,31 @@
 
 
 
+                <li class="has_sub" style="">
+                    <a href="#" class="waves-effect">
+                        <i class="ion ion-android-book"></i>
+                        <span> Category </span> <span
+                                class="menu-arrow"></span> </a>
+                    <ul style="">
+                        <li><a href="<?= base_url('admin/category/create') ?>"><span>Create</span></a></li>
+                        <li><a href="<?= base_url('admin/category/') ?>"><span>Manage</span></a></li>
+                        <li><a href="<?= base_url('admin/category/rearrange') ?>"><span>Category Re-arrange</span></a>
+                        </li>
+                    </ul>
+                </li>
 
+
+                <li class="has_sub">
+                    <a href="#" class="waves-effect">
+                        <i class="ion ion-clipboard"></i>
+                        <span> Sub Category </span> <span
+                                class="menu-arrow"></span> </a>
+                    <ul style="">
+                        <li><a href="<?= base_url('admin/subcategory/create') ?>"><span>Create</span></a></li>
+                        <li><a href="<?= base_url('admin/subcategory/') ?>"><span>Manage</span></a></li>
+                        <li><a href="<?= base_url('admin/subcategory/rearrange') ?>"><span>Sub-Category Re-arrange</span></a></li>
+                    </ul>
+                </li>
 
 
 
@@ -160,7 +184,7 @@
                     </ul>
                 </li>
 
-                <li class="has_sub" style="">
+                <li class="has_sub" style="display: none;">
                     <a href="#" class="waves-effect">
                         <i class="zmdi zmdi-fire"></i>
                         <span> Special Offers </span> <span
@@ -174,7 +198,7 @@
                 </li>
 
 
-                <li class="has_sub" style="">
+                <li class="has_sub" style="display: none">
                     <a href="#" class="waves-effect">
                         <i class="ion-ios7-printer"></i>
                         <span> Garments </span> <span
@@ -212,7 +236,7 @@
                     </ul>
                 </li>
 
-                <li class="has_sub" style="">
+                <li class="has_sub" style="display: none">
                     <a href="#" class="waves-effect">
                         <i class="ion ion-stats-bars  "></i>
                         <span> Advertisement </span> <span
