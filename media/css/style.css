@@ -3020,7 +3020,8 @@ article.ulockd-pd-content {
   color: #ffffff;
   position: relative; }
 .inner-conraimer-details:before {
-  background-color: rgba(17, 17, 17, 0.3);
+  /*background-color: rgba(17, 17, 17, 0.3);*/
+  background-image: url("../images/inner-pagebg.jpg");
   content: "";
   height: 100%;
   left: 0;

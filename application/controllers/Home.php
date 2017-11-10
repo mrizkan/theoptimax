@@ -182,7 +182,7 @@ class Home extends Front_Controller
 
     public function about_us()
     {
-        $this->view('about_us');
+        $this->view('about-us');
     }
 
 
@@ -294,7 +294,7 @@ class Home extends Front_Controller
 //    ====================================================================================================
     public function services()
     {
-        $this->view('services');
+        $this->view('service');
     }
     public function ourclients()
     {
@@ -364,9 +364,19 @@ class Home extends Front_Controller
         $this->view('principals', $d);
     }
 
-    function static_page($page)
+    function pcheck()
     {
-//        $this->load->view($page);
+       $this->load->view('products');
+    }
+
+    function pdetails()
+    {
+        $this->load->view('product-details');
+    }
+
+    function rcontact()
+    {
+        $this->load->view('contact-us');
     }
 
     function sent_mail()

@@ -112,17 +112,17 @@
 
                             </li>
                             <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
+                                <a href="Home/about_us" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
 
                             </li>
                             <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Service</a>
+                                <a href="Home/services" class="dropdown-toggle" data-toggle="dropdown">Service</a>
 
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opticals</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="">Work Shop</a></li>
+                                    <li><a href="Home/pcheck">Work Shop</a></li>
 
                                     <li class="dropdown">
                                         <a href="" class="dropdown-toggle" data-toggle="dropdown">Frames </a>
@@ -156,7 +156,7 @@
 
 
                             <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact Us</a>
+                                <a href="Home/rcontact" class="dropdown-toggle" data-toggle="dropdown">Contact Us</a>
 
                             </li>
 
