@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="inner-conraimer-details">
                     <div class="col-md-12">
-                        <h1 class="text-uppercase">SERVICE DETAILS</h1>
+                        <h1 class="text-uppercase">TEAM</h1>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                         <ul class="list-inline ulockd-icd-sub-menu">
                             <li><a href="#"> HOME </a></li>
                             <li><a href="#"> > </a></li>
-                            <li> <a href="#"> SERVICE DETAILS </a> </li>
+                            <li> <a href="#"> TEAM </a> </li>
                         </ul>
                     </div>
                 </div>
@@ -31,40 +31,107 @@
         </div>
     </div>
 
-
-<!-- Inner Pages Main Section -->
-<section class="ulockd-service-details">
-    <div class="container">
-        <div class="col-md-4 col-lg-3 ulockd-pdng0">
-            <div class="ulockd-all-service">
-                <h4>Bclinico Services</h4>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">Full Service</a>
-                    <a href="#" class="list-group-item">Graphic Design</a>
-                    <a href="#" class="list-group-item">Web Design</a>
-                    <a href="#" class="list-group-item">Responsive Design</a>
-                    <a href="#" class="list-group-item">Bootstrap Based</a>
-                    <a href="#" class="list-group-item">HTML5/CSS3/LESS</a>
-                    <a href="#" class="list-group-item">Latest Technologies</a>
-                    <a href="#" class="list-group-item">After Sale Support</a>
-                </div>
-            </div>
-
-
-
-        </div>
-        <div class="col-md-8 col-lg-9">
+    <section class="ulockd-team">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12 ulockd-mrgn1210">
-                    <div class="ulockd-project-sm-thumb">
-                        <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>10.jpg" alt="10.jpg">
-                        <p class="ulockd-mrgn1220">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which</p>
+                <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 text-center">
+                    <div class="ulockd-main-title">
+                        <h2 class="text-uppercase">OUR <span class="text-thm2">Team</span></h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem labore voluptates consequuntur velit necessitatibus maiores fugiat eaque.</p>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front" style="background: url(<?= base_url('media/images/') ?>service.jpg) 0 0 no-repeat;"></div>
+                            <div class="back">
+                                <div class="back-logo"></div>
+                                <h3 class="name">James Williams</h3>
+                                <h5 class="back-title">Neurologist</h5>
+                                <p>Consectetur adipisicing elit. Nisi rem nihil dolores enim consequatur, aperiam quos odit explicabo mollitia quisquam esse. Provident assumenda officiis, commodi cupiditate cumque. Laborum commodi iusto voluptates, minus odio sapiente repellat tempora, reprehenderit cum facilis natus!</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front" style="background: url(<?= base_url('media/images/') ?>service.jpg) 0 0 no-repeat;"></div>
+                            <div class="back">
+                                <h3 class="name">Ana Smith</h3>
+                                <h5 class="back-title">Dentist</h5>
+                                <p>Consectetur adipisicing elit. Nisi rem nihil dolores enim consequatur, aperiam quos odit explicabo mollitia quisquam esse. Provident assumenda officiis, commodi cupiditate cumque. Laborum commodi iusto voluptates, minus odio sapiente repellat tempora, reprehenderit cum facilis natus!</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front" style="background: url(<?= base_url('media/images/') ?>service.jpg) 0 0 no-repeat;"></div>
+                            <div class="back">
+                                <div class="back-logo"></div>
+                                <h3 class="name">Jhon Smith</h3>
+                                <h5 class="back-title">Cardiologist</h5>
+                                <p>Consectetur adipisicing elit. Nisi rem nihil dolores enim consequatur, aperiam quos odit explicabo mollitia quisquam esse. Provident assumenda officiis, commodi cupiditate cumque. Laborum commodi iusto voluptates, minus odio sapiente repellat tempora, reprehenderit cum facilis natus!</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 5%">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front" style="background: url(<?= base_url('media/images/') ?>service.jpg) 0 0 no-repeat;"></div>
+                            <div class="back">
+                                <div class="back-logo"></div>
+                                <h3 class="name">James Williams</h3>
+                                <h5 class="back-title">Neurologist</h5>
+                                <p>Consectetur adipisicing elit. Nisi rem nihil dolores enim consequatur, aperiam quos odit explicabo mollitia quisquam esse. Provident assumenda officiis, commodi cupiditate cumque. Laborum commodi iusto voluptates, minus odio sapiente repellat tempora, reprehenderit cum facilis natus!</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front" style="background: url(<?= base_url('media/images/') ?>service.jpg) 0 0 no-repeat;"></div>
+                            <div class="back">
+                                <h3 class="name">Ana Smith</h3>
+                                <h5 class="back-title">Dentist</h5>
+                                <p>Consectetur adipisicing elit. Nisi rem nihil dolores enim consequatur, aperiam quos odit explicabo mollitia quisquam esse. Provident assumenda officiis, commodi cupiditate cumque. Laborum commodi iusto voluptates, minus odio sapiente repellat tempora, reprehenderit cum facilis natus!</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front" style="background: url(<?= base_url('media/images/') ?>service.jpg) 0 0 no-repeat;"></div>
+                            <div class="back">
+                                <div class="back-logo"></div>
+                                <h3 class="name">Jhon Smith</h3>
+                                <h5 class="back-title">Cardiologist</h5>
+                                <p>Consectetur adipisicing elit. Nisi rem nihil dolores enim consequatur, aperiam quos odit explicabo mollitia quisquam esse. Provident assumenda officiis, commodi cupiditate cumque. Laborum commodi iusto voluptates, minus odio sapiente repellat tempora, reprehenderit cum facilis natus!</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
-</section>
+    </section>
+
+
 
 
 

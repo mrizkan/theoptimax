@@ -48,20 +48,41 @@
                                                 <?= form_error('form[SliderTitle]') ?>
                                             </div>
 
-                                            <div class="form-group" style="">
+                                            <!--<div class="form-group" style="">
                                                 <label for="description">Secondary Text</label>
                                                 <textarea rows="5" name="form[ShortDescription]"
-                                                          class="form-control"><?= set_value('form[ShortDescription]', $obj->ShortDescription) ?></textarea>
+                                                          class="form-control"><?/*= set_value('form[ShortDescription]', $obj->ShortDescription) */?></textarea>
+                                            </div>-->
+
+
+
+
+
+
+                                            <div class="form-group">
+                                                <label for="name">Button Text </label>
+                                                <input type="text" id="Description" name="form[Description]"
+                                                       value="<?= set_value('form[Description]', $obj->Description) ?>"
+                                                       class="form-control">
+                                                <?= form_error('form[Description]') ?>
                                             </div>
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group" style="">
+                                                <label for="description">Secondary Text</label>
+                                                <input type="text" name="form[ShortDescription]"
+                                                          class="form-control"><?= set_value('form[ShortDescription]', $obj->ShortDescription) ?></input>
+                                            </div>
+
+
                                             <div class="form-group">
                                                 <label for="name"> Url </label>
                                                 <input type="url" id="Url" name="form[Url]"
                                                        value="<?= set_value('form[Url]', $obj->Url) ?>"
                                                        class="form-control">
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
+                                            <div class="col-lg-12">
                                                 <label> Slider Default Image
                                                     <small> image size ( 1920px * 880px )</small>
                                                 </label>
@@ -88,8 +109,8 @@
                                                                    class="fa fa-search-plus pull-right btn  btn-success">
                                                                 </a>
                                                                 <input
-                                                                    type="hidden" name="form[Image]"
-                                                                    value="<?= $obj->Image ?>"></div>
+                                                                        type="hidden" name="form[Image]"
+                                                                        value="<?= $obj->Image ?>"></div>
                                                         </div>
                                                     </li>
                                                 <?php endif; ?>
