@@ -93,7 +93,8 @@ define("email", "rizkancool@gmail.com");
 if (@end(explode('.', $_SERVER['SERVER_NAME'])) == 'dev') {
 
     define('HOST', 'localhost');
-    define('DB', 'theoptimax');
+//    define('DB', 'theoptimax');
+    define('DB', 'theoptimax_1');
     define('USERNAME', 'root');
     define('PASSWORD', '');
 

@@ -112,11 +112,11 @@
 
                             </li>
                             <li>
-                                <a href="Home/about_us" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
+                                <a href="About-Us" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
 
                             </li>
                             <li>
-                                <a href="Home/services" class="dropdown-toggle" data-toggle="dropdown">Service</a>
+                                <a href="Services" class="dropdown-toggle" data-toggle="dropdown">Service</a>
 
                             </li>
                             <li class="dropdown">

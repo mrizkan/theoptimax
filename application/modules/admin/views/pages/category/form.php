@@ -39,6 +39,18 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <div class="row">
+                                        <div class="col-lg-6" >
+                                            <div class="form-group">
+                                                <label for="name">Select Menu</label>
+                                                <select class="form-control" name="form[MenuType]">.
+                                                    <option value=""> Select Menu</option>
+                                                    <option value="1" <?= ($obj->MenuType)==1?'selected' : ''; ?>> Opticals </option>
+                                                    <option value="2" <?= ($obj->MenuType)==2?'selected' : ''; ?>> Diabetic Foot Care </option>
+                                                </select>
+                                                <?= form_error('form[MenuType]') ?>
+                                            </div>
+
+                                        </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="name">Category Name </label>

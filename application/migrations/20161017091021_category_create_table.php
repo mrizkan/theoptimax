@@ -58,6 +58,10 @@ class Migration_Category_create_table extends CI_Migration
             "Order" => [
                 'type' => 'INT',
                 'constraint' => 11
+            ],
+            "MenuType" => [
+                'type' => 'INT',
+                'constraint' => 11
             ]
         ];
 

@@ -30,6 +30,7 @@ class Category extends MY_Controller
 
 
         $this->form_validation->set_rules("form[CategoryTitle]", "Category Name", "required");
+        $this->form_validation->set_rules("form[MenuType]", "Menu Type", "required");
 //        $this->form_validation->set_rules("form[Image]","Category Image","required");
 
         if ($this->form_validation->run()) {

@@ -5,8 +5,8 @@ include_once APPPATH . "modules/admin/core/MY_Controller.php";
 class Subcategory extends MY_Controller
 {
     var $page = "subcategory";
-    var $img_width = 400;
-    var $img_height = 400;
+    var $img_width = 32;
+    var $img_height = 32;
 
     function __construct()
     {
@@ -31,7 +31,7 @@ class Subcategory extends MY_Controller
     {
 
 
-//        $this->form_validation->set_rules("form[CategoryId]", "Category", "required");
+        $this->form_validation->set_rules("form[CategoryId]", "Category", "required");
         $this->form_validation->set_rules("form[SubCategoryTitle]", "Sub Category Title", "required");
 //        $this->form_validation->set_rules("form[BrandId]", "Brand Name", "required");
 //        $this->form_validation->set_rules("form[ProductTitle]","Product Name","required");

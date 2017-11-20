@@ -47,6 +47,7 @@
                                     <thead>
                                     <tr>
                                         <th> #</th>
+                                        <th> Menu Type</th>
                                         <th> Category Name</th>
                                         <th> Action</th>
                                     </tr>
@@ -56,6 +57,7 @@
                                         <tr>
                                             <td> <?= $k + 1 ?>  </td>
                                             <td> <?= $row->CategoryTitle ?> </td>
+                                            <td> <?= ($row->MenuType)==1?'Opticals' : 'Diabetic Foot Care'; ?></td>
                                             <td class="text-center">
                                                 <a href="<?= current_url() . "/edit/$row->CategoryId" ?>"
                                                    class="btn btn-warning fa fa-edit "> Edit </a>
