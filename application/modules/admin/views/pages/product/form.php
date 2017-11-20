@@ -47,14 +47,14 @@
                                                 <label for="name">Select Menu</label>
 
 
-                                                <select class="form-control" name="form[BrandId]">.
+                                                <select class="form-control" name="form[MenuType]">.
                                                     <option value=""> Select Menu</option>
                                                     <option value="1" <?= ($obj->BrandId)==1?'selected' : ''; ?>> Opticals </option>
                                                     <option value="2" <?= ($obj->BrandId)==2?'selected' : ''; ?>> Diabetic Foot Care </option>
 
                                                 </select>
 
-                                                <?= form_error('form[BrandId]') ?>
+                                                <?= form_error('form[MenuType]') ?>
 
                                             </div>
 
@@ -116,6 +116,15 @@
                                                        value="<?= set_value('form[PriceRangeTo]', $obj->PriceRangeTo) ?>"
                                                        class="form-control">
                                                 <?= form_error('form[PriceRangeTo]') ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6" style="display: none">
+                                            <div class="form-group">
+                                                <label for="name">Price </label>
+                                                <input type="text" id="PriceRangeTo" name="form[BrandId]"
+                                                       value="<?= set_value('form[BrandId]', $obj->BrandId) ?>"
+                                                       class="form-control">
+                                                <?= form_error('form[BrandId]') ?>
                                             </div>
                                         </div>
 
@@ -262,6 +271,7 @@
                                                 <label for="description">Description</label>
                                                 <textarea id="description" rows="5" name="form[Description]"
                                                           class="form-control"><?= $obj->Description ?></textarea>
+                                                <?= form_error('form[Description]') ?>
                                             </div>
                                         </div>
                                     </div>

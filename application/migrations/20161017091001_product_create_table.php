@@ -93,6 +93,10 @@ class Migration_Product_create_table extends CI_Migration
             "Color" => [
                 'type' => 'INT',
                 'constraint' => 11
+            ],
+            "MenuType" => [
+                'type' => 'INT',
+                'constraint' => 11
             ]
         ];
 

@@ -35,8 +35,8 @@ class Product extends MY_Controller
         $this->form_validation->set_rules("form[CategoryId]", "Category Name", "required");
         $this->form_validation->set_rules("form[ProductTitle]", "Product Title", "required");
         $this->form_validation->set_rules("form[Description]","Description","required");
-        $this->form_validation->set_rules("form[BrandId]", "Brand Name", "required");
-//        $this->form_validation->set_rules("form[SerialNumber]","Serial Number","required");
+        $this->form_validation->set_rules("form[MenuType]", "Menu Type", "required");
+        $this->form_validation->set_rules("form[Image]","Image","required");
 //        $this->form_validation->set_rules("form[PriceRangeTo]", "Price Range (To)", "required");
 //        $this->form_validation->set_rules("form[PriceRangeFrom]", "Price Range (From)", "required");
 //        $this->form_validation->set_rules("form[Color]", "Color", "required");
