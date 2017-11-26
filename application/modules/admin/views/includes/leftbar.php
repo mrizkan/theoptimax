@@ -249,7 +249,7 @@
                     </ul>
                 </li>
 
-                <li class="has_sub" style="display: none">
+                <li class="has_sub" >
                     <a href="#" class="waves-effect">
                         <i class="fa fa-file"></i>
                         <span> Latest News </span> <span

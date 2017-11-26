@@ -49,8 +49,8 @@
 
                                                 <select class="form-control" name="form[MenuType]">.
                                                     <option value=""> Select Menu</option>
-                                                    <option value="1" <?= ($obj->BrandId)==1?'selected' : ''; ?>> Opticals </option>
-                                                    <option value="2" <?= ($obj->BrandId)==2?'selected' : ''; ?>> Diabetic Foot Care </option>
+                                                    <option value="1" <?= ($obj->MenuType)==1?'selected' : ''; ?>> Opticals </option>
+                                                    <option value="2" <?= ($obj->MenuType)==2?'selected' : ''; ?>> Diabetic Foot Care </option>
 
                                                 </select>
 

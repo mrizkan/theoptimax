@@ -44,277 +44,45 @@
             <div class="col-md-8 col-lg-12 text-center">
                 
                 <div class="row ulockd-mrgn1260">
-                    <div class="col-sm-6 col-md-4 col-lg-3 clearfix">
+
+
+                    <?php foreach($products as $k=>$pro):  ?>
+                    <div class="col-sm-6 col-md-4 col-lg-4 clearfix">
                         <div class="ulockd-shop-item">
                             <div class="ulockd-product-img">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                                <div class="price-tag">Sale</div>
+                                <img class="img-responsive img-whp" src="<?= UP.$pro->Image ?>" alt="3.jpg">
+
                             </div>
                             <div class="ulockd-product-details">
-                                <h4 class="ulockd-product-price">Price: <span class="text-thm2">$14.99</span></h4>
-                                <ul class="list-inline">
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                </ul>
-                                <h3>Product Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum!</p>
-                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="pdetails">Add To Cart</a>
+                                <a href="<?= base_url('Product-Details/').url_title($pro->ProductTitle).'/'.$pro->ProductId ?>">
+                                    <h3><?= $pro->ProductTitle ?></h3>
+                                </a>
+                                <p><?= character_limiter($pro->Description,50); ?></p>
+                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="<?= base_url('Product-Details/').url_title($pro->ProductTitle).'/'.$pro->ProductId ?>">View More</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 clearfix">
-                        <div class="ulockd-shop-item">
-                            <div class="ulockd-product-img">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                                <div class="price-tag">Sale</div>
-                            </div>
-                            <div class="ulockd-product-details">
-                                <h4 class="ulockd-product-price">Price: <span class="text-thm2">$14.99</span></h4>
-                                <ul class="list-inline">
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star-o color-black33"></span></li>
-                                </ul>
-                                <h3>Product Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum!</p>
-                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="#">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 clearfix">
-                        <div class="ulockd-shop-item">
-                            <div class="ulockd-product-img">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                                <div class="price-tag">Sale</div>
-                            </div>
-                            <div class="ulockd-product-details">
-                                <h4 class="ulockd-product-price">Price: <span class="text-thm2">$14.99</span></h4>
-                                <ul class="list-inline">
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                </ul>
-                                <h3>Product Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum!</p>
-                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="#">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 clearfix">
-                        <div class="ulockd-shop-item">
-                            <div class="ulockd-product-img">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                                <div class="price-tag">Sale</div>
-                            </div>
-                            <div class="ulockd-product-details">
-                                <h4 class="ulockd-product-price">Price: <span class="text-thm2">$14.99</span></h4>
-                                <ul class="list-inline">
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star-o color-black33"></span></li>
-                                </ul>
-                                <h3>Product Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum!</p>
-                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="#">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 clearfix">
-                        <div class="ulockd-shop-item">
-                            <div class="ulockd-product-img">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                                <div class="price-tag">Sale</div>
-                            </div>
-                            <div class="ulockd-product-details">
-                                <h4 class="ulockd-product-price">Price: <span class="text-thm2">$14.99</span></h4>
-                                <ul class="list-inline">
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                </ul>
-                                <h3>Product Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum!</p>
-                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="#">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 clearfix">
-                        <div class="ulockd-shop-item">
-                            <div class="ulockd-product-img">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                                <div class="price-tag">Sale</div>
-                            </div>
-                            <div class="ulockd-product-details">
-                                <h4 class="ulockd-product-price">Price: <span class="text-thm2">$14.99</span></h4>
-                                <ul class="list-inline">
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                </ul>
-                                <h3>Product Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum!</p>
-                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="#">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 clearfix">
-                        <div class="ulockd-shop-item">
-                            <div class="ulockd-product-img">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                                <div class="price-tag">Sale</div>
-                            </div>
-                            <div class="ulockd-product-details">
-                                <h4 class="ulockd-product-price">Price: <span class="text-thm2">$14.99</span></h4>
-                                <ul class="list-inline">
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                </ul>
-                                <h3>Product Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum!</p>
-                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="#">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 clearfix">
-                        <div class="ulockd-shop-item">
-                            <div class="ulockd-product-img">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                                <div class="price-tag">Sale</div>
-                            </div>
-                            <div class="ulockd-product-details">
-                                <h4 class="ulockd-product-price">Price: <span class="text-thm2">$14.99</span></h4>
-                                <ul class="list-inline">
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star-o color-black33"></span></li>
-                                </ul>
-                                <h3>Product Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum!</p>
-                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="#">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 clearfix">
-                        <div class="ulockd-shop-item">
-                            <div class="ulockd-product-img">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                                <div class="price-tag">Sale</div>
-                            </div>
-                            <div class="ulockd-product-details">
-                                <h4 class="ulockd-product-price">Price: <span class="text-thm2">$14.99</span></h4>
-                                <ul class="list-inline">
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                </ul>
-                                <h3>Product Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum!</p>
-                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="#">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 clearfix">
-                        <div class="ulockd-shop-item">
-                            <div class="ulockd-product-img">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                                <div class="price-tag">Sale</div>
-                            </div>
-                            <div class="ulockd-product-details">
-                                <h4 class="ulockd-product-price">Price: <span class="text-thm2">$14.99</span></h4>
-                                <ul class="list-inline">
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star-o color-black33"></span></li>
-                                </ul>
-                                <h3>Product Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum!</p>
-                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="#">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 clearfix">
-                        <div class="ulockd-shop-item">
-                            <div class="ulockd-product-img">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                                <div class="price-tag">Sale</div>
-                            </div>
-                            <div class="ulockd-product-details">
-                                <h4 class="ulockd-product-price">Price: <span class="text-thm2">$14.99</span></h4>
-                                <ul class="list-inline">
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                </ul>
-                                <h3>Product Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum!</p>
-                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="#">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 clearfix">
-                        <div class="ulockd-shop-item">
-                            <div class="ulockd-product-img">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                                <div class="price-tag">Sale</div>
-                            </div>
-                            <div class="ulockd-product-details">
-                                <h4 class="ulockd-product-price">Price: <span class="text-thm2">$14.99</span></h4>
-                                <ul class="list-inline">
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star color-black33"></span></li>
-                                    <li><span class="fa fa-star-o color-black33"></span></li>
-                                </ul>
-                                <h3>Product Title</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum!</p>
-                                <a class="btn btn-lg ulockd-btn-styledark hvr-bounce-to-right" href="#">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
+                 <?php endforeach; ?>
                 </div>
             </div>
             <div class="col-lg-12">
                 <nav aria-label="Page navigation navigation-lg">
                     <ul class="pagination">
                         <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">PREV</span>
-                            </a>
+<!--                            <a href="#" aria-label="Previous">-->
+<!--                                <span aria-hidden="true">PREV</span>-->
+<!--                            </a>-->
                         </li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
+<!--                        <li class="active"><a href="#">1</a></li>-->
+<!--                        <li><a href="#">2</a></li>-->
+<!--                        <li><a href="#">3</a></li>-->
+<!--                        <li><a href="#">4</a></li>-->
+<!--                        <li><a href="#">5</a></li>-->
+                        <?= $links ?>
                         <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">NEXT</span>
-                            </a>
+<!--                            <a href="#" aria-label="Next">-->
+<!--                                <span aria-hidden="true">NEXT</span>-->
+<!--                            </a>-->
                         </li>
                     </ul>
                 </nav>
