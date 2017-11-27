@@ -122,34 +122,69 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opticals</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="Home/pcheck">Work Shop</a></li>
+                        <?php foreach($menu_op as $op_menu): ?>
+
 
                                     <li class="dropdown">
-                                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Frames </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href=""><img src="<?= base_url('media/images/') ?>menu1.png"> Autorefractor </a></li>
-                                            <li><a href=""><img src="<?= base_url('media/images/') ?>menu2.png"> Contact Lense</a></li>
-                                            <li><a href=""><img src="<?= base_url('media/images/') ?>menu3.png"> Sunglass</a></li>
-                                            <li><a href=""><img src="<?= base_url('media/images/') ?>menu4.png"> Kerato Meter</a></li>
-                                        </ul>
+                                        <a href="<?= base_url('Products/'.url_title($op_menu->CategoryTitle).'/'.$op_menu->CategoryId) ?>" class="dropdown-toggle" data-toggle="dropdown"><?= $op_menu->CategoryTitle ?> </a>
+
+                                       <?php
+                                       if(count($op_menu->sub)>0){
+                                           ?>
+                                           <ul class="dropdown-menu">
+                                           <?php foreach($op_menu->sub as $op_menu_sub): ?>
+                                               <li>
+                                                   <a href="<?= base_url('Products/'.url_title($op_menu->CategoryTitle).'/'.url_title($op_menu_sub->SubCategoryTitle).'/'.$op_menu_sub->SubCategoryId) ?>">
+                                                       <img src="<?= UP.$op_menu_sub->Image ?>" style="width: 32px;height: 32px;">
+                                                       <?= $op_menu_sub->SubCategoryTitle ?>
+                                                   </a>
+                                               </li>
+                                           <?php endforeach; ?>
+
+                                           </ul>
+
+                                           <?php
+                                       }
+                                       ?>
+
                                     </li>
 
 
-
-                                    <li><a href="">Sunglasses</a></li>
-                                    <li><a href="">Display</a></li>
-                                    <li><a href="">Contact Lense</a></li>
+                    <?php endforeach; ?>
                                 </ul>
-
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Diabetic Foot Care</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="">Item 1</a></li>
-                                    <li><a href="">Item 2</a></li>
-                                    <li><a href="">Item 3</a></li>
-                                    <li><a href="">Item 4</a></li>
-                                    <li><a href="">Item 5</a></li>
+                                    <?php foreach($menu_dfc as $dfc_menu): ?>
+
+
+                                        <li class="dropdown">
+                                            <a href="<?= base_url('Products/'.url_title($dfc_menu->CategoryTitle).'/'.$dfc_menu->CategoryId) ?>" class="dropdown-toggle" data-toggle="dropdown"><?= $op_menu->CategoryTitle ?> </a>
+
+                                            <?php
+                                            if(count($dfc_menu->sub)>0){
+                                                ?>
+                                                <ul class="dropdown-menu">
+                                                    <?php foreach($dfc_menu->sub as $dfc_menu_sub): ?>
+                                                        <li>
+                                                            <a href="<?= base_url('Products/'.url_title($dfc_menu->CategoryTitle).'/'.url_title($dfc_menu_sub->SubCategoryTitle).'/'.$dfc_menu_sub->SubCategoryId) ?>">
+                                                                <img src="<?= UP.$dfc_menu_sub->Image ?>" style="width: 32px;height: 32px;">
+                                                                <?= $dfc_menu_sub->SubCategoryTitle ?>
+                                                            </a>
+                                                        </li>
+                                                    <?php endforeach; ?>
+
+                                                </ul>
+
+                                                <?php
+                                            }
+                                            ?>
+
+                                        </li>
+
+
+                                    <?php endforeach; ?>
                                 </ul>
                             </li>
 

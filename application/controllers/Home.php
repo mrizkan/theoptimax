@@ -30,8 +30,7 @@ class Home extends Front_Controller
     function index()
     {
 
-        $data['menu'] = $this->category->with('sub')->order_by("Order", "ASC")->get_many_by(['MenuType=2'] );
-        p($data['menu']);
+
 
 //
         $d['sliders'] = $this->slider->order_by('Order', 'ASC')->get_all();

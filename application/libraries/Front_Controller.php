@@ -36,7 +36,10 @@ class Front_Controller extends CI_Controller
 
 
          $this->load->model('Subcategory_model', 'subcategory');
-        $data['menu'] = $this->category->with('sub')->order_by("Order", "ASC")->limit(10)->get_all();
+//        $data['menu'] = $this->category->with('sub')->order_by("Order", "ASC")->limit(10)->get_all();
+        $data['menu_op'] = $this->category->with('sub')->order_by("Order", "ASC")->get_many_by(['MenuType=1'] );
+        $data['menu_dfc'] = $this->category->with('sub')->order_by("Order", "ASC")->get_many_by(['MenuType=2'] );
+
 
         $this->load->model('Advertisement_model', 'addz');
         $data['home_addz_01'] = $this->addz->limit(1)->order_by("AddId", "DESC")->get_by( 'LocationId=1');
