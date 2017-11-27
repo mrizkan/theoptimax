@@ -323,7 +323,172 @@ class Product extends Front_Controller
 
     }
 
+    function search(){
+        date_default_timezone_set('Asia/Colombo');
+//        p($this->input->get('key'));
+        $d['today']=date('Y-m-d');
+//        $d['side_menu'] = $this->category->with('sub')->order_by("Order", "ASC")->get_all();
+//        $this->db->get_where('product_option', $where)->row()
 
+        $d['side_menu'] = $this->category->order_by("Order", "ASC")->get_all();
+        foreach($d['side_menu'] as &$cat  ) {
+            $cat->sub = $this->subcategory->get_many_by(array('CategoryId ' => $cat->CategoryId));
+//            $cat->product_count = $this->product->count_by(array('CategoryId ' => $cat->CategoryId));
+            $where='CategoryId="c-'.$cat->CategoryId;
+            $cat->product_count = $this->db->get_where('product_category', $where.'"')->num_rows();
+        }
+
+
+
+        $d['total_count'] = $this->product->count_by([]);
+        $d['count'] = $this->product->count_by([]);
+//        $d['one_category'] = $this->category->get($CategoryId);
+        $d['category_list'] = $this->category->order_by("Order", "ASC")->get_all();
+
+//        ============================================================================
+        $config["base_url"] = base_url() . "Search?key=".$this->input->get('key');
+//        $config["base_url"] = base_url() . "Products/Search?category_id=".$this->input->get('category_id')."&key=".$this->input->get('key');
+
+
+
+
+        $this->db->select("product.*");
+        $this->db->like('product.ProductTitle', $this->input->get('key'));
+        $this->db->like('product.ShortDescription', $this->input->get('key'));
+        $this->db->like('product.Description', $this->input->get('key'));
+        $d['products_count'] = $this->product->order_by("Order", "ASC")->get_all();
+//        p($this->db->last_query());
+        foreach($d['products_count'] as $x=> $data_c){
+            $where='ProductId='.$data_c->ProductId.' AND  Qty > 0';
+            $d['products_count'][$x]->option= $this->db->order_by('Price','ASC')->get_where('product_option', $where)->row();
+//            p($this->db->last_query());
+        }
+
+        $i=0;
+        foreach($d['products_count'] as $pro){
+            if ($pro->option != null AND $pro->option->Qty > 0):
+                $i++;
+            endif;
+        }
+//        p($i);
+//        $config["total_rows"] = $this->product->count_by([]);
+        $config["total_rows"] = $i;
+
+        $config["per_page"] = 9;
+        $config["uri_segment"] = 2;
+        $choice = $config["total_rows"] / $config["per_page"];
+//        $config["num_links"] = round($choice);
+//        $config["num_links"] = 3;
+        $config["num_links"] =  round($choice);;
+
+        $config['page_query_string'] = TRUE;
+        $config['query_string_segment'] = 'page';
+
+//        $config["use_page_numbers"] = TRUE;
+
+        $config["use_page_numbers"] = TRUE;
+        $config['cur_tag_open'] = '<li class="active">';
+        $config['cur_tag_close'] = '</li>';
+        $config["num_tag_open"] ='<li>';
+        $config["num_tag_close"] ='</li>';
+
+        $config["next_tag_open"] ='<li>';
+        $config["next_tag_close"] ='</li>';
+
+        $config["prev_tag_open"] ='<li>';
+        $config["prev_tag_close"] ='</li>';
+
+        $config["first_link"] = "&laquo;";
+        $config["first_tag_open"] = '<li  class="list-inline-item button-gray"> ';
+        $config["first_tag_close"] = '</li>';
+
+        $config["last_link"] = "&raquo;";
+        $config["last_tag_open"] = '<li  class="list-inline-item button-gray">';
+        $config["last_tag_close"] = '</li>';
+
+//        $config['next_link'] = '>';
+//        $config['prev_link'] = '<';
+
+
+        $this->pagination->initialize($config);
+//        $page = ($this->uri->segment(2)) ? $this->uri->segment(2) : 1;
+        if($this->input->get('page')){
+            $page = $this->input->get('page') ;
+        }
+        else{
+            $page = 1;
+        }
+
+
+
+        $d['pages']=round($choice);
+
+
+
+
+        $where='product_option.Qty > 0';
+        $this->db->select('product.*,product_option.*');
+        $this->db->from('product as pro');
+        $this->db->join('product_option', 'product_option.ProductId = product.ProductId');
+        $this->db->where($where);
+//            $this->db->like('BrandTitle', $this->input->get('key'));
+        $this->db->like('product.ProductTitle', $this->input->get('key'));
+        $this->db->like('product.ShortDescription', $this->input->get('key'));
+        $this->db->like('product.Description', $this->input->get('key'));
+
+        $this->db->group_by("product_option.ProductId");
+//        $d['products'] = $this->product->order_by("Order", "ASC")->limit($config["per_page"],($page-1)*9)->get_all();
+        $d['products'] = $this->product->order_by("Order", "ASC")->limit($config["per_page"],($page-1)*9)->get_all();
+
+//        p($this->db->last_query());
+
+        $d["links"] = $this->pagination->create_links();
+
+
+        $d['link'] = "";
+
+        $this->view('search',$d);
+
+
+//        p($this->db->last_query());
+//        p( $d['products'] );
+
+//        $where='ProductId='.$ProductId.' AND product_option.Qty > 0';
+//        $where='product_option.Qty > 0';
+//        $this->db->select('product.*,product_option.*');
+//        $this->db->from('product');
+//        $this->db->join('product_option', 'product_option.ProductId = product.ProductId');
+//        $this->db->where($where);
+//
+//        $this->db->like('product.ProductTitle', $this->input->get('key'));
+//        $this->db->like('product.ShortDescription', $this->input->get('key'));
+//        $this->db->like('product.Description', $this->input->get('key'));
+//
+//
+//        $this->db->group_by("product_option.ProductId");
+//        $this->db->order_by("product_option.Price", "ASC");
+//        $d['products']->option = $this->db->get()->result_object();
+
+//        p($this->db->last_query());
+//        p($d['products']);
+
+//        foreach($d['products_pre'] as $k=> $data){
+////            $where='ProductId='.$data->ProductId.' AND OptionId=1';
+//            $where='ProductId='.$data->ProductId.' AND  Qty > 0';
+//            $d['products_pre'][$k]->option= $this->db->order_by('Price','ASC')->get_where('product_option', $where)->row();
+////            p($this->db->last_query());
+//        }
+
+
+
+//        p($d['products']);
+//        exit;
+
+//        $result = $this->db->get_where('product_option', $where)->row();
+//        return $result;
+//        $d["products"] = $this->product->order_by("Order", "ASC")->limit($config["per_page"],($page-1)*16)->get_many_by(['CategoryId'=>$CategoryId]);
+
+    }
 
 
     function detail($ProductId)

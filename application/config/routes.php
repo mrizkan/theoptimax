@@ -87,14 +87,15 @@ $route['Product-Details/(.+)/(.+)'] = 'product/detail/$2';
 $route['Products/(:num)'] = 'product/product_index/$1';
 $route['Products'] = 'product/product_index';
 
-$route['Special-Offers/(:num)'] = 'product/special_offer/$1';
-$route['Special-Offers'] = 'product/special_offer';
+$route['Search?'] = 'product/search';
+//$route['Special-Offers/(:num)'] = 'product/special_offer/$1';
+//$route['Special-Offers'] = 'product/special_offer';
 
-$route['Special-Offer-Details/(.+)/(:num)'] = 'product/special_offer_detail/$2';
+//$route['Special-Offer-Details/(.+)/(:num)'] = 'product/special_offer_detail/$2';
 
-$route['Garments/(.+)/(:num)/(:num)'] = 'product/garment/$2/$3';
-$route['Garments/(.+)/(:num)'] = 'product/garment/$2';
-$route['Garment/(.+)/(:num)'] = 'product/garment_detail/$2';
+//$route['Garments/(.+)/(:num)/(:num)'] = 'product/garment/$2/$3';
+//$route['Garments/(.+)/(:num)'] = 'product/garment/$2';
+//$route['Garment/(.+)/(:num)'] = 'product/garment_detail/$2';
 
 //$route['Ongoing-Projects'] = 'Onproject/index';
 //$route['Ongoing-Projects/(.+)'] = 'Onproject/index/$1';
