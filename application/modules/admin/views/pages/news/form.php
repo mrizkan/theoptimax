@@ -64,7 +64,7 @@
                                             </div>
 
 
-                                            <div class="form-group">
+                                            <div class="form-group" style="display: none">
                                                 <label for="description">Video Embed Code </label>
                                                 <textarea rows="5" name="form[VideoEmbedCode]"
                                                           class="form-control"><?= $obj->VideoEmbedCode ?></textarea>
@@ -76,7 +76,7 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label> News Default Image
-                                                    <small> image size ( 540px * 320px )</small>
+                                                    <small> image size ( 605px * 442px )</small>
                                                 </label>
                                             </div>
                                             <div class="fileinput-button btn btn-success sepH_b">
@@ -113,7 +113,7 @@
                                         </div>
 
 
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12" style="display: none">
                                             <div class="form-group">
                                                 <label for="description">Description</label>
                                                 <textarea id="description" rows="5" name="form[Description]"
@@ -132,7 +132,7 @@
 
 
                     <div>
-                        <div class="card-box">
+                        <div class="card-box" style="display: none">
                             <h4 class="header-title m-t-0 m-b-30">More Images
                                 <small> image size ( 540px * 320px )</small>
                             </h4>

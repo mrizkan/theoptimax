@@ -167,7 +167,7 @@
                                         </div>
 
 
-                                        <div class="col-lg-6" style="display: none" >
+                                        <div class="col-lg-6"  >
                                             <div class="form-group">
                                                 <div class="form-group">
                                                     <label for="description">Short Description</label>

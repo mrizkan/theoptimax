@@ -34,9 +34,10 @@ class Home extends Front_Controller
 
 //
         $d['sliders'] = $this->slider->order_by('Order', 'ASC')->get_all();
-//        $d['related_products'] = $this->product->order_by("Order", "ASC")->limit(6)->get_all();
-        $d['related_products'] = $this->product->limit(4)->order_by("ProductId", "DESC")->get_all();
-
+        $d['products'] = $this->product->order_by("Order", "ASC")->limit(8)->get_all();
+        $d['news'] = $this->news->order_by("Order", "ASC")->limit(3)->get_all();
+//        $d['related_products'] = $this->product->limit(4)->order_by("ProductId", "DESC")->get_all();
+//        p($this->db->last_query());
 
 
 //        p($d['mediaCom']);
@@ -247,9 +248,9 @@ class Home extends Front_Controller
 
         if ($this->input->post()) {
 
-            $this->form_validation->set_rules('name', 'Name', 'required');
-            $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-            $this->form_validation->set_rules('enquiry', 'Message', 'required');
+            $this->form_validation->set_rules('form_name', 'Name', 'required');
+            $this->form_validation->set_rules('form_email', 'Email', 'required|valid_email');
+            $this->form_validation->set_rules('form_message', 'Message', 'required');
 //            $this->form_validation->set_rules('form_phone', 'Phone', 'numeric');
             if ($this->form_validation->run()) {
 //                p('02');
@@ -262,10 +263,12 @@ class Home extends Front_Controller
                 $msg = '<html><body>';
                 $msg .= '<img src="' . base_url() . 'media/images/logo.jpg" alt="' . TITLE . '" />';
                 $msg .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-                $msg .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($this->input->post('name')) . "</td></tr>";
-                $msg .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($this->input->post('email')) . "</td></tr>";
+                $msg .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($this->input->post('form_name')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($this->input->post('form_email')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Subject:</strong> </td><td>" . strip_tags($this->input->post('form_subject')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Phone:</strong> </td><td>" . strip_tags($this->input->post('form_phone')) . "</td></tr>";
 
-                $msg .= "<tr><td><strong>Comment:</strong> </td><td>" . strip_tags($this->input->post('enquiry')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Comment:</strong> </td><td>" . strip_tags($this->input->post('form_message')) . "</td></tr>";
                 $msg .= "</table>";
                 $msg .= "</body></html>";
 
@@ -273,7 +276,7 @@ class Home extends Front_Controller
                 $this->email->send();
                 $d['message'] = "<div class='alert alert-success' style='color: green'>Your message was sent successfully. Thanks.</div>";
 
-                $this->view('contact_us', $d);
+                $this->view('contact-us', $d);
             } else {
                 $d['name'] = $this->input->post('form_name');
                 $d['email'] = $this->input->post('form_email');
@@ -282,11 +285,11 @@ class Home extends Front_Controller
                 $d['comment'] = $this->input->post('form_message');
 
                 $d['message'] = "<div class='alert alert-danger' style='color: green'>Validation errors occurred....!<br/> Please confirm the fields and submit again.</div>";
-                $this->view('contact_us', $d);
+                $this->view('contact-us', $d);
             }
         } else {
 
-            $this->view('contact_us', $d);
+            $this->view('contact-us', $d);
 //            $this->load->view('contacts');
         }
 
@@ -296,7 +299,8 @@ class Home extends Front_Controller
 //    ====================================================================================================
     public function services()
     {
-        $this->view('service');
+        $d['news'] = $this->news->order_by("Order", "ASC")->get_all();
+        $this->view('service', $d);
     }
     public function ourclients()
     {

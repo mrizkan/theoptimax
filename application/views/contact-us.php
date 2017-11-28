@@ -21,9 +21,9 @@
             <div class="col-md-12">
                 <div class="ulockd-icd-layer">
                     <ul class="list-inline ulockd-icd-sub-menu">
-                        <li><a href="#"> HOME </a></li>
+                        <li><a href="/"> HOME </a></li>
                         <li><a href="#"> > </a></li>
-                        <li> <a href="#"> CONTACT US </a> </li>
+                        <li> <a href="javascript::"> CONTACT US </a> </li>
                     </ul>
                 </div>
             </div>
@@ -38,6 +38,7 @@
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <div class="ulockd-cp-title">
                     <h2 class="text-uppercase">CONTACT DETAILS</h2>
+                    <?=@$message;  ?>
                 </div>
             </div>
         </div>
@@ -61,7 +62,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <input id="form_name" name="form_name" class="form-control ulockd-form-fg required" placeholder="Your name" required="required" data-error="Name is required." type="text">
+                                    <input id="form_name" name="form_name" class="form-control ulockd-form-fg required" placeholder="Your name" required="required" data-error="Name is required." type="text" >
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -79,7 +80,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <input id="form_subject" name="form_subject" class="form-control ulockd-form-fg required" placeholder="Subject" required="required" data-error="Subject is required." type="text">
+                                    <input id="form_subject" name="form_subject" class="form-control ulockd-form-fg required" placeholder="Subject"  data-error="Subject is required." type="text">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>

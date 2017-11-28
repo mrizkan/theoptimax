@@ -108,15 +108,15 @@
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-left" data-in="bounceIn">
                             <li>
-                                <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Home</a>
+                                <a href="<?= base_url('Home') ?>" class="dropdown-toggle active" data-toggle="dropdown">Home</a>
 
                             </li>
                             <li>
-                                <a href="About-Us" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
+                                <a href="<?= base_url('About-Us') ?>" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
 
                             </li>
                             <li>
-                                <a href="Services" class="dropdown-toggle" data-toggle="dropdown">Service</a>
+                                <a href="<?= base_url('Services') ?>" class="dropdown-toggle" data-toggle="dropdown">Service</a>
 
                             </li>
                             <li class="dropdown">
@@ -134,7 +134,7 @@
                                            <ul class="dropdown-menu">
                                            <?php foreach($op_menu->sub as $op_menu_sub): ?>
                                                <li>
-                                                   <a href="<?= base_url('Products/'.url_title($op_menu->CategoryTitle).'/'.url_title($op_menu_sub->SubCategoryTitle).'/'.$op_menu_sub->SubCategoryId) ?>">
+                                                   <a href="<?= base_url('Product/'.url_title($op_menu->CategoryTitle).'/'.url_title($op_menu_sub->SubCategoryTitle).'/'.$op_menu_sub->SubCategoryId) ?>">
                                                        <img src="<?= UP.$op_menu_sub->Image ?>" style="width: 32px;height: 32px;">
                                                        <?= $op_menu_sub->SubCategoryTitle ?>
                                                    </a>
@@ -168,7 +168,7 @@
                                                 <ul class="dropdown-menu">
                                                     <?php foreach($dfc_menu->sub as $dfc_menu_sub): ?>
                                                         <li>
-                                                            <a href="<?= base_url('Products/'.url_title($dfc_menu->CategoryTitle).'/'.url_title($dfc_menu_sub->SubCategoryTitle).'/'.$dfc_menu_sub->SubCategoryId) ?>">
+                                                            <a href="<?= base_url('Product/'.url_title($dfc_menu->CategoryTitle).'/'.url_title($dfc_menu_sub->SubCategoryTitle).'/'.$dfc_menu_sub->SubCategoryId) ?>">
                                                                 <img src="<?= UP.$dfc_menu_sub->Image ?>" style="width: 32px;height: 32px;">
                                                                 <?= $dfc_menu_sub->SubCategoryTitle ?>
                                                             </a>
@@ -191,7 +191,7 @@
 
 
                             <li>
-                                <a href="Home/rcontact" class="dropdown-toggle" data-toggle="dropdown">Contact Us</a>
+                                <a href="<?= base_url('Contact-Us') ?>" class="dropdown-toggle" data-toggle="dropdown">Contact Us</a>
 
                             </li>
 

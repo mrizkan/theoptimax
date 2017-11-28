@@ -5,6 +5,8 @@ include_once APPPATH . "modules/admin/core/MY_Controller.php";
 class News extends MY_Controller
 {
     var $page = "news";
+    var $img_width = 605;
+    var $img_height = 442;
 
     function __construct()
     {
@@ -29,7 +31,7 @@ class News extends MY_Controller
 
         $this->form_validation->set_rules("form[NewsTitle]", "News Title", "required");
         $this->form_validation->set_rules("form[Image]", "News Image", "required");
-        $this->form_validation->set_rules("form[Description]", "Description", "required");
+//        $this->form_validation->set_rules("form[Description]", "Description", "required");
         $this->form_validation->set_rules("form[ShortDescription]", "Short Description", "required");
 
         if ($this->form_validation->run()) {
@@ -47,7 +49,7 @@ class News extends MY_Controller
                 $this->db->trans_rollback();
                 $this->session->set_flashdata('notification', ["alert" => "danger", "text" => '<strong> ' . (!$_id ? "Creation." : "Update.") . ' Failure !!! </strong>']);
             } else {
-                $this->session->set_flashdata('notification', ["alert" => "success", "text" => '<strong> Event Successfully ' . (!$_id ? "Created." : "Updated.") . '</strong>']);
+                $this->session->set_flashdata('notification', ["alert" => "success", "text" => '<strong>  Successfully ' . (!$_id ? "Created." : "Updated.") . '</strong>']);
                 $this->db->trans_commit();
             }
             redirect(current_url());

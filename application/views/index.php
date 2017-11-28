@@ -117,25 +117,27 @@
             <div class="col-md-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs team-tab" role="tablist">
-                    <li role="presentation" class="active"><a href="#team1" aria-controls="team1" role="tab" data-toggle="tab"><img src="<?= base_url('media/images/') ?>s1.jpg" alt="s1.jpg"></a></li>
-                    <li role="presentation"><a href="#team2" aria-controls="team2" role="tab" data-toggle="tab"><img src="<?= base_url('media/images/') ?>s2.jpg" alt="s2.jpg"></a></li>
-                    <li role="presentation"><a href="#team3" aria-controls="team3" role="tab" data-toggle="tab"><img src="<?= base_url('media/images/') ?>s1.jpg" alt="s1.jpg"></a></li>
-                    <li role="presentation"><a href="#team4" aria-controls="team4" role="tab" data-toggle="tab"><img src="<?= base_url('media/images/') ?>s2.jpg" alt="s2.jpg"></a></li>
-                    <li role="presentation"><a href="#team5" aria-controls="team5" role="tab" data-toggle="tab"><img src="<?= base_url('media/images/') ?>s1.jpg" alt="s1.jpg"></a></li>
-                    <li role="presentation"><a href="#team6" aria-controls="team6" role="tab" data-toggle="tab"><img src="<?= base_url('media/images/') ?>s2.jpg" alt="s2.jpg"></a></li>
-                    <li role="presentation"><a href="#team7" aria-controls="team7" role="tab" data-toggle="tab"><img src="<?= base_url('media/images/') ?>s1.jpg" alt="s1.jpg"></a></li>
-                    <li role="presentation"><a href="#team8" aria-controls="team8" role="tab" data-toggle="tab"><img src="<?= base_url('media/images/') ?>s2.jpg" alt="s2.jpg"></a></li>
+                <?php foreach($products as $k=>$pro): ?>
+                    <li role="presentation" <?= ($k==0)?'class="active"':''; ?>>
+                        <a href="#team<?= $k ?>" aria-controls="team<?= $k ?>" role="tab" data-toggle="tab">
+                            <img src="<?= UP.$pro->Image ?>" alt="<?= $pro->Image ?>" style="width: 90px;height: 90px">
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+
+
                 </ul>
             </div>
         </div>
         <div class="row">
             <!-- Tab panes -->
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active team1" id="team1">
+        <?php foreach($products as $x=>$pro_data): ?>
+                <div role="tabpanel" class="tab-pane <?= ($x==0)?'active':''; ?> team<?= $x ?>" id="team<?= $x ?>">
                     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
                         <div class="ulockd-team-member">
                             <div class="team-thumb">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>2pro.jpg" alt="1.jpg">
+                                <img class="img-responsive img-whp" src="<?= UP.$pro_data->Image ?>" alt="1.jpg">
                                 <div class="team-overlay">
                                     <ul class="list-inline team-icon style2">
                                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -147,300 +149,26 @@
                                 </div>
                             </div>
                             <div class="team-details text-left">
-                                <h3>Product Name <small class="text-thm2"></small> </h3>
-                                <a href="#appointment_view" data-toggle="modal" class="btn btn-default ulockd-btn-thm2"> See Our Products </a>
+                                <h3><?=$pro_data->ProductTitle ?> <small class="text-thm2"></small> </h3>
+                                <a href="<?= base_url('Product-Details/').url_title($pro->ProductTitle).'/'.$pro->ProductId ?>" data-toggle="modal" class="btn btn-default ulockd-btn-thm2"> See Product </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-8">
                         <div class="team-overview">
-                            <h3 class="tm-ovv-title">Overview for Product Name</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi possimus maiores odio , illo amet perferendis!</p>
-                            <strong>Product Code:</strong> p001. <br>
-                            <strong>Brand:</strong> Multiple Sclerosis & Neuro-Immunology.<br>
-                            <strong>Board Certification:</strong> Neurology.<br>
-                            <strong>Weight:</strong> No. <br>
-                            <strong>Warranty:</strong> Mon - Sat. <br>
-                            <strong>Price:</strong> Rs. 15000 <br>
-
+                            <h3 class="tm-ovv-title">Overview for <?=$pro_data->ProductTitle ?></h3>
+                            <p>
+                                <?=$pro_data->ShortDescription ?>
+                            </p>
 
 
                         </div>
                     </div>
 
                 </div>
-
-                <div role="tabpanel" class="tab-pane team2" id="team2">
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
-                        <div class="ulockd-team-member">
-                            <div class="team-thumb">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>2pro1.jpg" alt="2.jpg">
-                                <div class="team-overlay">
-                                    <ul class="list-inline team-icon style2">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="mailto:name@email.com"><i class="fa fa-envelope"></i> Email</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="team-details text-left">
-                                <h3>Product Name <small class="text-thm2"></small> </h3>
-                                <a href="#appointment_view" data-toggle="modal" class="btn btn-default ulockd-btn-thm2"> See Our Products </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-8">
-                        <div class="team-overview">
-                            <h3 class="tm-ovv-title">Overview for Product Name</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi possimus maiores odio , illo amet perferendis!</p>
-                            <strong>Product Code:</strong> Specialty in Product Name. <br>
-                            <strong>Brand:</strong> Multiple Sclerosis & Neuro-Immunology.<br>
-                            <strong>Board Certification:</strong> Product Name.<br>
-                            <strong>Weight:</strong> No. <br>
-                            <strong>Warranty:</strong> Mon - Sat. <br>
-                            <strong>Price:</strong> Rs. 15000 <br>
+        <?php endforeach; ?>
 
 
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div role="tabpanel" class="tab-pane team3" id="team3">
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
-                        <div class="ulockd-team-member">
-                            <div class="team-thumb">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>2pro.jpg" alt="3.jpg">
-                                <div class="team-overlay">
-                                    <ul class="list-inline team-icon style2">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="mailto:name@email.com"><i class="fa fa-envelope"></i> Email</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="team-details text-left">
-                                <h3>Product Name <small class="text-thm2"></small> </h3>
-                                <a href="#appointment_view" data-toggle="modal" class="btn btn-default ulockd-btn-thm2"> See Our Products </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-8">
-                        <div class="team-overview">
-                            <h3 class="tm-ovv-title">Overview for Product Name</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi possimus maiores odio , illo amet perferendis!</p>
-                            <strong>Product Code:</strong> Specialty in Product Name. <br>
-                            <strong>Brand:</strong> paediatric Product Names & Product Name.<br>
-                            <strong>Board Certification:</strong> Product Name.<br>
-                            <strong>Weight:</strong> No. <br>
-                            <strong>Warranty:</strong> Mon - Sat. <br>
-                            <strong>Price:</strong> Rs. 15000 <br>
-
-
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div role="tabpanel" class="tab-pane team4" id="team4">
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
-                        <div class="ulockd-team-member">
-                            <div class="team-thumb">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>2pro1.jpg" alt="5.jpg">
-                                <div class="team-overlay">
-                                    <ul class="list-inline team-icon style2">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="mailto:name@email.com"><i class="fa fa-envelope"></i> Email</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="team-details text-left">
-                                <h3>Product Name <small class="text-thm2"></small> </h3>
-                                <a href="#appointment_view" data-toggle="modal" class="btn btn-default ulockd-btn-thm2"> See Our Products </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-8">
-                        <div class="team-overview">
-                            <h3 class="tm-ovv-title">Overview for Product Name</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi possimus maiores odio , illo amet perferendis!</p>
-                            <strong>Product Code:</strong> Specialty in Product Name. <br>
-                            <strong>Brand:</strong> Aesthetic Product Namery & Preventative Product Namery.<br>
-                            <strong>Board Certification:</strong> Product Name.<br>
-                            <strong>Weight:</strong> No. <br>
-                            <strong>Warranty:</strong> Mon - Sat. <br>
-                            <strong>Price:</strong> Rs. 15000 <br>
-
-
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div role="tabpanel" class="tab-pane team5" id="team5">
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
-                        <div class="ulockd-team-member">
-                            <div class="team-thumb">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>2pro.jpg" alt="4.jpg">
-                                <div class="team-overlay">
-                                    <ul class="list-inline team-icon style2">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="mailto:name@email.com"><i class="fa fa-envelope"></i> Email</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="team-details text-left">
-                                <h3>Product Name <small class="text-thm2"></small> </h3>
-                                <a href="#appointment_view" data-toggle="modal" class="btn btn-default ulockd-btn-thm2"> See Our Products </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-8">
-                        <div class="team-overview">
-                            <h3 class="tm-ovv-title">Overview for Product Name</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi possimus maiores odio , illo amet perferendis!</p>
-                            <strong>Product Code:</strong> p001. <br>
-                            <strong>Brand:</strong> Multiple Sclerosis & Neuro-Immunology.<br>
-                            <strong>Board Certification:</strong> Neurology.<br>
-                            <strong>Weight:</strong> No. <br>
-                            <strong>Warranty:</strong> Mon - Sat. <br>
-                            <strong>Price:</strong> Rs. 15000 <br>
-
-
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div role="tabpanel" class="tab-pane team6" id="team6">
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
-                        <div class="ulockd-team-member">
-                            <div class="team-thumb">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>2pro1.jpg" alt="6.jpg">
-                                <div class="team-overlay">
-                                    <ul class="list-inline team-icon style2">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="mailto:name@email.com"><i class="fa fa-envelope"></i> Email</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="team-details text-left">
-                                <h3>Product Name <small class="text-thm2"></small> </h3>
-                                <a href="#appointment_view" data-toggle="modal" class="btn btn-default ulockd-btn-thm2"> See Our Products </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-8">
-                        <div class="team-overview">
-                            <h3 class="tm-ovv-title">Overview for Product Name</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi possimus maiores odio , illo amet perferendis!</p>
-                            <strong>Product Code:</strong> Specialty in Product Name.<br>
-                            <strong>Brand:</strong> Multiple Sclerosis & Neuro-Immunology.<br>
-                            <strong>Board Certification:</strong> Product Name.<br>
-                            <strong>Weight:</strong> No. <br>
-                            <strong>Warranty:</strong> Mon - Sat. <br>
-                            <strong>Price:</strong> Rs. 15000 <br>
-
-
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div role="tabpanel" class="tab-pane team7" id="team7">
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
-                        <div class="ulockd-team-member">
-                            <div class="team-thumb">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>2pro.jpg" alt="7.jpg">
-                                <div class="team-overlay">
-                                    <ul class="list-inline team-icon style2">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="mailto:name@email.com"><i class="fa fa-envelope"></i> Email</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="team-details text-left">
-                                <h3>Product Name <small class="text-thm2"></small> </h3>
-                                <a href="#appointment_view" data-toggle="modal" class="btn btn-default ulockd-btn-thm2"> See Our Products </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-8">
-                        <div class="team-overview">
-                            <h3 class="tm-ovv-title">Overview for Product Name</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi possimus maiores odio , illo amet perferendis!</p>
-                            <strong>Product Code:</strong> p001. <br>
-                            <strong>Brand:</strong> Multiple Sclerosis & Neuro-Immunology.<br>
-                            <strong>Board Certification:</strong> Neurology.<br>
-                            <strong>Weight:</strong> No. <br>
-                            <strong>Warranty:</strong> Mon - Sat. <br>
-                            <strong>Price:</strong> Rs. 15000 <br>
-
-
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div role="tabpanel" class="tab-pane team8" id="team8">
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
-                        <div class="ulockd-team-member">
-                            <div class="team-thumb">
-                                <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>2pro1.jpg" alt="8.jpg">
-                                <div class="team-overlay">
-                                    <ul class="list-inline team-icon style2">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="mailto:name@email.com"><i class="fa fa-envelope"></i> Email</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="team-details text-left">
-                                <h3>Product Name <small class="text-thm2"></small> </h3>
-                                <a href="#appointment_view" data-toggle="modal" class="btn btn-default ulockd-btn-thm2"> See Our Products </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-8">
-                        <div class="team-overview">
-                            <h3 class="tm-ovv-title">Overview for Product Name</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi possimus maiores odio , illo amet perferendis!</p>
-                            <strong>Product Code:</strong> Specialty in Product Name. <br>
-                            <strong>Brand:</strong> Multiple Sclerosis & Neuro-Immunology.<br>
-                            <strong>Board Certification:</strong> Product Name.<br>
-                            <strong>Weight:</strong> No. <br>
-                            <strong>Warranty:</strong> Mon - Sat. <br>
-                            <strong>Price:</strong> Rs. 15000 <br>
-
-
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
     </div>
@@ -461,45 +189,26 @@
             </div>
         </div>
         <div class="row">
+
+           <?php foreach($news as $home_news): ?>
             <div class="col-sm-6 col-md-4">
                 <article class="ulockd-blog-post">
                     <div class="post-thumb">
-                        <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>ser2.jpg" alt="1.jpg">
+                        <a href="<?= base_url('Services') ?>">
+                             <img class="img-responsive img-whp" src="<?= UP. $home_news->Image ?>" alt="<?=$home_news->Image ?>">
+                        </a>
                     </div>
                     <div class="bp-details one text-left">
-
-                        <h3 class="post-title">Our Latest Post</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consequatur hic, harum aliquid aperiam fuga beatae.</p>
-                        <button type="submit" class="btn btn-default ulockd-btn-thm2">Read More</button>
+                        <a href="<?= base_url('Services') ?>">
+                            <h3 class="post-title"><?= $home_news->NewsTitle ?></h3>
+                        </a>
+                        <p><?= character_limiter($home_news->ShortDescription,150) ?></p>
+<!--                        <button type="submit" class="btn btn-default ulockd-btn-thm2">Read More</button>-->
                     </div>
                 </article>
             </div>
-            <div class="col-sm-6 col-md-4">
-                <article class="ulockd-blog-post">
-                    <div class="post-thumb">
-                        <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>ser.jpg" alt="2.jpg">
-                    </div>
-                    <div class="bp-details one text-left">
+    <?php endforeach; ?>
 
-                        <h3 class="post-title">Our Latest Post</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consequatur hic, harum aliquid aperiam fuga beatae.</p>
-                        <button type="submit" class="btn btn-default ulockd-btn-thm2">Read More</button>
-                    </div>
-                </article>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <article class="ulockd-blog-post">
-                    <div class="post-thumb">
-                        <img class="img-responsive img-whp" src="<?= base_url('media/images/') ?>3.jpg" alt="3.jpg">
-                    </div>
-                    <div class="bp-details one text-left">
-
-                        <h3 class="post-title">Our Latest Post</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consequatur hic, harum aliquid aperiam fuga beatae.</p>
-                        <button type="submit" class="btn btn-default ulockd-btn-thm2">Read More</button>
-                    </div>
-                </article>
-            </div>
         </div>
     </div>
 </section>

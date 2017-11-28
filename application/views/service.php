@@ -21,9 +21,9 @@
                 <div class="col-md-12">
                     <div class="ulockd-icd-layer">
                         <ul class="list-inline ulockd-icd-sub-menu">
-                            <li><a href="#"> HOME </a></li>
+                            <li><a href="/"> HOME </a></li>
                             <li><a href="#"> > </a></li>
-                            <li> <a href="#"> TEAM </a> </li>
+                            <li> <a href="#"> SERVICES </a> </li>
                         </ul>
                     </div>
                 </div>
@@ -40,93 +40,29 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem labore voluptates consequuntur velit necessitatibus maiores fugiat eaque.</p>
                     </div>
                 </div>
+
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4">
+                <?php foreach($news as $home_news): ?>
+                    <div class="col-xs-12 col-sm-6 col-md-4" style="margin-top: 5%;">
                     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                         <div class="flipper">
-                            <div class="front" style="background: url(<?= base_url('media/images/') ?>service.jpg) 0 0 no-repeat;"></div>
+                            <div class="front" style="background: url(<?= UP. $home_news->Image ?>) 0 0 no-repeat;"></div>
                             <div class="back">
                                 <div class="back-logo"></div>
-                                <h3 class="name">James Williams</h3>
-                                <h5 class="back-title">Neurologist</h5>
-                                <p>Consectetur adipisicing elit. Nisi rem nihil dolores enim consequatur, aperiam quos odit explicabo mollitia quisquam esse. Provident assumenda officiis, commodi cupiditate cumque. Laborum commodi iusto voluptates, minus odio sapiente repellat tempora, reprehenderit cum facilis natus!</p>
-
+                                <h3 class="name"><?= $home_news->NewsTitle ?>s</h3>
+<!--                                <h5 class="back-title">Neurologist</h5>-->
+                                <p>
+                                    <?= $home_news->ShortDescription ?>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                        <div class="flipper">
-                            <div class="front" style="background: url(<?= base_url('media/images/') ?>service.jpg) 0 0 no-repeat;"></div>
-                            <div class="back">
-                                <h3 class="name">Ana Smith</h3>
-                                <h5 class="back-title">Dentist</h5>
-                                <p>Consectetur adipisicing elit. Nisi rem nihil dolores enim consequatur, aperiam quos odit explicabo mollitia quisquam esse. Provident assumenda officiis, commodi cupiditate cumque. Laborum commodi iusto voluptates, minus odio sapiente repellat tempora, reprehenderit cum facilis natus!</p>
+                <?php endforeach; ?>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                        <div class="flipper">
-                            <div class="front" style="background: url(<?= base_url('media/images/') ?>service.jpg) 0 0 no-repeat;"></div>
-                            <div class="back">
-                                <div class="back-logo"></div>
-                                <h3 class="name">Jhon Smith</h3>
-                                <h5 class="back-title">Cardiologist</h5>
-                                <p>Consectetur adipisicing elit. Nisi rem nihil dolores enim consequatur, aperiam quos odit explicabo mollitia quisquam esse. Provident assumenda officiis, commodi cupiditate cumque. Laborum commodi iusto voluptates, minus odio sapiente repellat tempora, reprehenderit cum facilis natus!</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="row" style="margin-top: 5%">
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                        <div class="flipper">
-                            <div class="front" style="background: url(<?= base_url('media/images/') ?>service.jpg) 0 0 no-repeat;"></div>
-                            <div class="back">
-                                <div class="back-logo"></div>
-                                <h3 class="name">James Williams</h3>
-                                <h5 class="back-title">Neurologist</h5>
-                                <p>Consectetur adipisicing elit. Nisi rem nihil dolores enim consequatur, aperiam quos odit explicabo mollitia quisquam esse. Provident assumenda officiis, commodi cupiditate cumque. Laborum commodi iusto voluptates, minus odio sapiente repellat tempora, reprehenderit cum facilis natus!</p>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                        <div class="flipper">
-                            <div class="front" style="background: url(<?= base_url('media/images/') ?>service.jpg) 0 0 no-repeat;"></div>
-                            <div class="back">
-                                <h3 class="name">Ana Smith</h3>
-                                <h5 class="back-title">Dentist</h5>
-                                <p>Consectetur adipisicing elit. Nisi rem nihil dolores enim consequatur, aperiam quos odit explicabo mollitia quisquam esse. Provident assumenda officiis, commodi cupiditate cumque. Laborum commodi iusto voluptates, minus odio sapiente repellat tempora, reprehenderit cum facilis natus!</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                        <div class="flipper">
-                            <div class="front" style="background: url(<?= base_url('media/images/') ?>service.jpg) 0 0 no-repeat;"></div>
-                            <div class="back">
-                                <div class="back-logo"></div>
-                                <h3 class="name">Jhon Smith</h3>
-                                <h5 class="back-title">Cardiologist</h5>
-                                <p>Consectetur adipisicing elit. Nisi rem nihil dolores enim consequatur, aperiam quos odit explicabo mollitia quisquam esse. Provident assumenda officiis, commodi cupiditate cumque. Laborum commodi iusto voluptates, minus odio sapiente repellat tempora, reprehenderit cum facilis natus!</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </section>

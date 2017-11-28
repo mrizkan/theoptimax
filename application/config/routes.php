@@ -76,8 +76,8 @@ $route['Brands'] = 'brand/index';
 
 $route['Products/Search?'] = 'product/index';
 
-$route['Products/(.+)/(.+)/(:num)/(:num)'] = 'product/product_sub_category/$3/$4';
-$route['Products/(.+)/(.+)/(:num)'] = 'product/product_sub_category/$3';
+$route['Product/(.+)/(.+)/(:num)/(:num)'] = 'product/product_sub_category/$3/$4';
+$route['Product/(.+)/(.+)/(:num)'] = 'product/product_sub_category/$3';
 
 $route['Products/(.+)/(:num)/(:num)'] = 'product/product_category/$2';
 $route['Products/(.+)/(:num)'] = 'product/product_category/$2';

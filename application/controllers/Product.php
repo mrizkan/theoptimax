@@ -212,7 +212,7 @@ class Product extends Front_Controller
 
     function product_sub_category($CategoryId){
 
-        p($CategoryId);
+//        p($CategoryId);
 
         $d['total_count'] = $this->product->count_by(['SubCategoryId'=>$CategoryId]);
 
@@ -315,7 +315,7 @@ class Product extends Front_Controller
 //        p($this->db->last_query());
 //        p($this->uri->segment(4));
 //        p($d['total_count']);
-        p($d["products"]);
+//        p($d["products"]);
 
         $this->view('products',$d);
 //        $this->view('product');
@@ -504,7 +504,7 @@ class Product extends Front_Controller
 
 //        p($this->db->last_query());
 
-        $d['related_products'] = $this->product->limit(5)->order_by('rand()')->get_many_by(['CategoryId' => $d['details']->CategoryId]);
+        $d['related_products'] = $this->product->limit(4)->order_by('rand()')->get_many_by(['MenuType' => $d['details']->MenuType]);
 
         $d['one_sub_category'] = $this->subcategory->get($d['details']->SubCategoryId);
         $d['one_category'] = $this->category->get($d['details']->CategoryId);
