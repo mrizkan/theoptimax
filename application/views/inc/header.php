@@ -75,15 +75,17 @@
             <div class="container">
                 <nav class="navbar navbar-default bootsnav menu-style1">
                     <!-- Start Top Search -->
+                    <form action="<?= base_url('Search') ?>" method="get">
                     <div class="top-search">
                         <div class="container">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                                <input type="text" class="form-control" placeholder="Search">
+                                <input type="text" class="form-control" placeholder="Search" name="key">
                                 <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
                             </div>
                         </div>
                     </div>
+                    </form>
                     <!-- End Top Search -->
 
                     <!-- Start Atribute Navigation -->

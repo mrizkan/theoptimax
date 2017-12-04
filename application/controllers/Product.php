@@ -324,26 +324,6 @@ class Product extends Front_Controller
     }
 
     function search(){
-        date_default_timezone_set('Asia/Colombo');
-//        p($this->input->get('key'));
-        $d['today']=date('Y-m-d');
-//        $d['side_menu'] = $this->category->with('sub')->order_by("Order", "ASC")->get_all();
-//        $this->db->get_where('product_option', $where)->row()
-
-        $d['side_menu'] = $this->category->order_by("Order", "ASC")->get_all();
-        foreach($d['side_menu'] as &$cat  ) {
-            $cat->sub = $this->subcategory->get_many_by(array('CategoryId ' => $cat->CategoryId));
-//            $cat->product_count = $this->product->count_by(array('CategoryId ' => $cat->CategoryId));
-            $where='CategoryId="c-'.$cat->CategoryId;
-            $cat->product_count = $this->db->get_where('product_category', $where.'"')->num_rows();
-        }
-
-
-
-        $d['total_count'] = $this->product->count_by([]);
-        $d['count'] = $this->product->count_by([]);
-//        $d['one_category'] = $this->category->get($CategoryId);
-        $d['category_list'] = $this->category->order_by("Order", "ASC")->get_all();
 
 //        ============================================================================
         $config["base_url"] = base_url() . "Search?key=".$this->input->get('key');
@@ -352,27 +332,28 @@ class Product extends Front_Controller
 
 
 
-        $this->db->select("product.*");
-        $this->db->like('product.ProductTitle', $this->input->get('key'));
-        $this->db->like('product.ShortDescription', $this->input->get('key'));
-        $this->db->like('product.Description', $this->input->get('key'));
-        $d['products_count'] = $this->product->order_by("Order", "ASC")->get_all();
+        $this->db->select("COUNT(*) as count");
+        $this->db->or_like('product.ProductTitle', $this->input->get('key'));
+        $this->db->or_like('product.ShortDescription', $this->input->get('key'));
+        $this->db->or_like('product.Description', $this->input->get('key'));
+       $d['products_count'] =  $this->product->order_by("Order", "ASC")->get_all();
 //        p($this->db->last_query());
-        foreach($d['products_count'] as $x=> $data_c){
-            $where='ProductId='.$data_c->ProductId.' AND  Qty > 0';
-            $d['products_count'][$x]->option= $this->db->order_by('Price','ASC')->get_where('product_option', $where)->row();
+//        p($d['products_count']);
+//        foreach($d['products_count'] as $x=> $data_c){
+//            $where='ProductId='.$data_c->ProductId.' AND  Qty > 0';
+//            $d['products_count'][$x]->option= $this->db->order_by('Price','ASC')->get_where('product_option', $where)->row();
 //            p($this->db->last_query());
-        }
+//        }
 
-        $i=0;
-        foreach($d['products_count'] as $pro){
-            if ($pro->option != null AND $pro->option->Qty > 0):
-                $i++;
-            endif;
-        }
+//        $i=0;
+//        foreach($d['products_count'] as $pro){
+//            if ($pro->option != null AND $pro->option->Qty > 0):
+//                $i++;
+//            endif;
+//        }
 //        p($i);
 //        $config["total_rows"] = $this->product->count_by([]);
-        $config["total_rows"] = $i;
+        $config["total_rows"] = $d['products_count'][0]->count;
 
         $config["per_page"] = 9;
         $config["uri_segment"] = 2;
@@ -387,8 +368,8 @@ class Product extends Front_Controller
 //        $config["use_page_numbers"] = TRUE;
 
         $config["use_page_numbers"] = TRUE;
-        $config['cur_tag_open'] = '<li class="active">';
-        $config['cur_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a>';
+        $config['cur_tag_close'] = '</a></li>';
         $config["num_tag_open"] ='<li>';
         $config["num_tag_close"] ='</li>';
 
@@ -427,16 +408,12 @@ class Product extends Front_Controller
 
 
         $where='product_option.Qty > 0';
-        $this->db->select('product.*,product_option.*');
+        $this->db->select('product.*');
         $this->db->from('product as pro');
-        $this->db->join('product_option', 'product_option.ProductId = product.ProductId');
-        $this->db->where($where);
-//            $this->db->like('BrandTitle', $this->input->get('key'));
-        $this->db->like('product.ProductTitle', $this->input->get('key'));
-        $this->db->like('product.ShortDescription', $this->input->get('key'));
-        $this->db->like('product.Description', $this->input->get('key'));
+        $this->db->or_like('product.ProductTitle', $this->input->get('key'));
+        $this->db->or_like('product.ShortDescription', $this->input->get('key'));
+        $this->db->or_like('product.Description', $this->input->get('key'));
 
-        $this->db->group_by("product_option.ProductId");
 //        $d['products'] = $this->product->order_by("Order", "ASC")->limit($config["per_page"],($page-1)*9)->get_all();
         $d['products'] = $this->product->order_by("Order", "ASC")->limit($config["per_page"],($page-1)*9)->get_all();
 
