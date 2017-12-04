@@ -21,7 +21,7 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li > a:hover,
 .fservice-box:hover h3,
 .ulockd-bp-btn:hover,
 .ulockd-bp-details.style2:hover .ulockd-bp-title h3 {
-	color: #09A9B9 !important;
+	color: #09A9B9;
 }
 nav.navbar.bootsnav.light-red ul.nav > li > a.active,
 nav.navbar.bootsnav.light-red ul.nav > li > a:hover,

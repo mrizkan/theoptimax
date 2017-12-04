@@ -3,60 +3,37 @@
 
 
 <!-- Home Design -->
-<div class="ulockd-home-slider">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 ulockd-pmz">
-                <div class="cd-hero">
-                    <ul class="cd-hero-slider autoplay">
-                        <li class="selected">
-                            <div class="cd-full-width">
-                                <h2>Welcome to Optipix.</h2>
-                                <!--<h2> with Optipix.</h2>-->
-                                <h4>Endless, Without Limit.</h4>
-                                <a href="#0" class="cd-btn btn btn-default ulockd-btn-thm2">Our Products</a>
-                                <a href="#0" class="cd-btn btn btn-default ulockd-btn-styledark">Get Quote</a>
-                            </div> <!-- .cd-full-width -->
-                        </li>
-
-                        <li>
-                            <div class="cd-full-width">
-                                <h1>Your Satisfaction Our Goal.</h1>
-                                <h2>Chance For Change.</h2>
-                                <a href="#0" class="cd-btn btn btn-default ulockd-btn-thm2">About Us</a>
-                                <a href="#0" class="cd-btn btn btn-default ulockd-btn-thm2">Learn More</a>
-                            </div> <!-- .cd-half-width -->
-                        </li>
-
-                        <li>
-
-                            <!--<div class="cd-full-width">
-                                <h1>We Are <span class="color-nightblue"> Optimax </span></h1>
-                                <h2>We Are a Helping Hand.</h2>
-                                <h4>Best Health Care System has gladly served</h4>
-                                <a href="#0" class="cd-btn btn btn-default ulockd-btn-thm2">Our Mission</a>
-                                <a href="#" class="cd-btn btn btn-default ulockd-btn-thm2">Learn More</a>
-                            </div>--> <!-- .cd-full-width -->
-
-                        </li>
-                    </ul> <!-- .cd-hero-slider -->
-
-                    <div class="cd-slider-nav">
-                        <nav>
-                            <span class="cd-marker item-1"></span>
-
-                            <ul>
-                                <li class="selected"><a href="#0"></a></li>
-                                <li><a href="#0"></a></li>
-                                <li><a href="#0"></a></li>
-                            </ul>
-                        </nav>
-                    </div> <!-- .cd-slider-nav -->
+    <!-- Home Design -->
+    <div class="ulockd-home-slider">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="sg-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel" data-slide-to="1" class=""></li>
+                        <li data-target="#carousel" data-slide-to="2" class=""></li>
+                    </ol>
+                    <!-- Carousel items -->
+                    <div class="carousel-inner carousel-zoom">
+            <?php foreach($sliders as $i=>$slider):  ?>
+                        <div class="item <?= ($i==0)?'active':'' ?>"><img class="img-responsive" src="<?= UP.$slider->Image ?>" alt="h7.jpg">
+                            <div class="carousel-caption style1">
+                                <h1 data-animation="animated zoomInLeft" class="cap-txt">Best Symptom Finder</h1>
+                                <p data-animation="animated bounceInDown">Giving The Best Solution</p>
+                                <!-- <p class="style2" data-animation="animated bounceInUp">Thousand of people satisfied our medical treatment</p> -->
+                                <button href="#appointment_view" data-toggle="modal" data-animation="animated bounceInUp" class="btn btn-lg ulockd-btn-thm2 hidden-xs ulockd-mrgn310"><span>Appointment</span></button>
+                                <button data-animation="animated bounceInUp" class="btn btn-lg ulockd-btn-thm2 hidden-xs"><span>More Info</span></button>
+                            </div>
+                        </div>
+            <?php endforeach; ?>
+                        <!-- Carousel nav -->
+                        <a class="carousel-control left" href="#sg-carousel" data-slide="prev">‹</a>
+                        <a class="carousel-control right" href="#sg-carousel" data-slide="next">›</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 <!-- Our About -->
 <section class="ulockd-about2">

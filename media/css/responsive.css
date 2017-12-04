@@ -64,8 +64,8 @@
 	.main-slider2 .mslider-caption {padding: 12%;}
 }
 @media only screen and (max-width:992px){
-	nav.navbar.bootsnav ul.nav li.dropdown ul.dropdown-menu  > li > a {color: #fff;}
-	nav.navbar.bootsnav.menu-style1 .navbar-toggle {background-color: transparent !important;color: #fff;}
+	nav.navbar.bootsnav ul.nav li.dropdown ul.dropdown-menu  > li > a {color: #fff; !important;}
+	nav.navbar.bootsnav.menu-style1 .navbar-toggle {background-color: transparent !important;color: #fff;!important;}
 	.ulockd-main-logo2 > img {margin-top: 0;}
 }
 /* (min-width:768px) (max-width:991px) */

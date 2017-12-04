@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
                     <div class="ulockd-welcm-hmddl tac-md">
-                        <a href="index.html" class="ulockd-main-logo"><img src="<?= base_url('media/images/') ?>header-logo.png" alt=""></a>
+                        <a href="/" class="ulockd-main-logo"><img src="<?= base_url('media/images/') ?>header-logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
@@ -128,7 +128,9 @@
 
 
                                     <li class="dropdown">
-                                        <a href="<?= base_url('Products/'.url_title($op_menu->CategoryTitle).'/'.$op_menu->CategoryId) ?>" class="dropdown-toggle" data-toggle="dropdown"><?= $op_menu->CategoryTitle ?> </a>
+                                        <a href="<?= base_url('Products/'.url_title($op_menu->CategoryTitle).'/'.$op_menu->CategoryId) ?>" class="<?= (count($op_menu->sub)>0)?'dropdown-toggle':'' ?>" data-toggle="dropdown">
+                                            <?= $op_menu->CategoryTitle ?>
+                                        </a>
 
                                        <?php
                                        if(count($op_menu->sub)>0){
